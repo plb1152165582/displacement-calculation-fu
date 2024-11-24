@@ -1,6 +1,9 @@
-CXXFLAGS=-Iinclude
+CXXFLAGS = -Iinclude
 
-CXX=g++
+OBJECTS = obj/main.o
 
-all: main.cpp
-	$CCX $CXXFLAGS -o IMUFHE src/main.cpp
+all: obj/main.o
+	g++ $(CXXFLAGS) -o IMUFHE $(OBJECTS)
+
+obj/main.o: src/main.cpp
+	g++ $(CXXFLAGS) -c -o obj/main.o src/main.cpp
